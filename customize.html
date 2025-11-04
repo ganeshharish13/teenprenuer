@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customize Clothes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">ReWear</div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="customize.html" class="active">Customize</a> <a href="donate.html">Donate</a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="pre-made.html">Already Made Clothes</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-banner">
+    <img src="assets/images/customize.jpg" alt="Customize Banner">
+  </section>
+
+  <section class="form-section">
+    <form id="customizeForm">
+      <label>Gender
+        <select required>
+          <option value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label>Height (cm)
+        <input type="number" placeholder="e.g. 170" required>
+      </label>
+      <label>Size
+        <select required>
+          <option value="">Select</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+      </label>
+      <label>Color Preference
+        <input type="text" placeholder="e.g. Blue, Black">
+      </label>
+      <label>Style Preference
+        <input type="text" placeholder="e.g. Casual, Formal">
+      </label>
+      <button type="submit" class="btn">Submit Preferences</button>
+    </form>
+    <div id="customizeMessage" class="info hidden"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© 2025 ReWear — Student Project</p>
+</footer>
+
+<script>
+  const customizeForm = document.getElementById('customizeForm');
+  const customizeMessage = document.getElementById('customizeMessage');
+
+  customizeForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    customizeMessage.classList.remove('hidden');
+    customizeMessage.textContent = "Thanks! Your preferences have been saved (demo).";
+    customizeForm.reset();
+    setTimeout(()=> customizeMessage.classList.add('hidden'), 6000);
+  });
+</script>
+
+</body>
+</html>

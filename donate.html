@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate Clothes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">ReWear</div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="customize.html">Customize</a>
+    <a href="donate.html" class="active">Donate</a> <a href="tutorials.html">Tutorials</a>
+    <a href="pre-made.html">Already Made Clothes</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-banner">
+    <img src="assets/images/donate.jpg" alt="Donate Banner">
+  </section>
+
+  <section class="form-section">
+    <form id="donateForm">
+      <label>Name <input type="text" required></label>
+      <label>Email <input type="email" required></label>
+      <label>Items <textarea placeholder="e.g. 3 t-shirts, 1 jacket" required></textarea></label>
+      <label>Location <input type="text" placeholder="Optional"></label>
+      <button type="submit" class="btn">Submit Donation</button>
+    </form>
+    <div id="donationMessage" class="info hidden"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© 2025 ReWear — Student Project</p>
+</footer>
+
+<script>
+  const donateForm = document.getElementById('donateForm');
+  const donationMessage = document.getElementById('donationMessage');
+
+  donateForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    donationMessage.classList.remove('hidden');
+    donationMessage.textContent = "Thank you! You earned 50 points (demo).";
+    donateForm.reset();
+    setTimeout(()=> donationMessage.classList.add('hidden'), 6000);
+  });
+</script>
+
+</body>
+</html>

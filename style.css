@@ -1,0 +1,299 @@
+/* =======================
+   Fonts & General
+======================= */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* --- Nature Color Palette --- */
+:root {
+  --color-primary-bg: #f5fafa;    /* Light Sky Blue/White (Body Background) */
+  --color-secondary-bg: #e8f5e9;  /* Soft Moss Green/Linen (Card/Container Background) */
+  --color-tertiary-bg: #1b5e20;   /* Deep Teal/Pine (Header/Footer/Dark Contrast) */
+  --color-accent: #2e7d32;        /* Forest Green (Primary Accent) */
+  --color-text-dark: #333333;     /* Dark Text for contrast */
+  --color-text-subtle: #6a6a6a;   /* Muted Green-Gray (Subtle Text/Borders) */
+  --color-border: #99cc99;        /* Light Leaf Green (Input contrast) */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--color-primary-bg);
+  color: var(--color-text-dark);
+  line-height: 1.65;
+  letter-spacing: 0.5px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-accent);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #5cb85c; /* Lighter shade of green on hover */
+}
+
+/* =======================
+   Header & Navigation
+======================= */
+header.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: var(--color-tertiary-bg); /* Deep Pine Header */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.nav a {
+  margin-left: 25px;
+  font-weight: 500;
+  color: var(--color-secondary-bg); /* Light text on dark header */
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+/* =======================
+   Hero Section
+======================= */
+.hero-img {
+  width: 100%;
+  max-height: 500px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* =======================
+   Categories Section
+======================= */
+.categories {
+  max-width: 1200px;
+  margin: 40px auto 60px auto;
+  padding: 0 20px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.category-card {
+  background: var(--color-secondary-bg); /* Soft Moss Card Background */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+}
+
+.category-card img {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* =======================
+   Category Descriptions
+======================= */
+.category-desc {
+  background: #c8e6c9; /* Slightly darker shade of secondary for contrast */
+  padding: 15px;
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  text-align: center;
+  border-radius: 0 0 12px 12px;
+  transition: background 0.3s;
+}
+
+.category-card:hover .category-desc {
+  background: #a5d6a7;
+}
+
+/* =======================
+   Page Banner Images
+======================= */
+.page-banner img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* =======================
+   Forms
+======================= */
+form {
+  background: var(--color-secondary-bg);
+  padding: 35px;
+  border-radius: 16px;
+  max-width: 550px;
+  margin: 30px auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border: 1px solid var(--color-border);
+}
+
+form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text-dark);
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--color-primary-bg); /* Light background for input fields */
+  color: var(--color-text-dark);
+  box-sizing: border-box;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: 2px solid var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #ffffff; /* White text on accent color */
+  padding: 14px 25px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background: #5cb85c;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn.small {
+  padding: 10px 18px;
+  font-size: 0.9rem;
+}
+
+/* =======================
+   Info Messages
+======================= */
+.info {
+  background: var(--color-secondary-bg);
+  color: var(--color-accent);
+  padding: 15px 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid var(--color-accent);
+}
+
+.hidden {
+  display: none;
+}
+
+/* =======================
+   Grids (Tutorials & Pre-Made)
+======================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto 60px auto;
+  padding: 0 20px;
+}
+
+.grid .card {
+  background: var(--color-secondary-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  padding-bottom: 20px;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.grid .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+}
+
+.grid .card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.grid .card h3 {
+  margin: 15px 0 10px 0;
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.8px;
+}
+
+/* =======================
+   Footer
+======================= */
+footer,
+.site-footer {
+  text-align: center;
+  padding: 25px 0;
+  background: var(--color-tertiary-bg); /* Deep Pine Footer */
+  color: var(--color-secondary-bg); /* Light text on dark footer */
+  margin-top: 50px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
